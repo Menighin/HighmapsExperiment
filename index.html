@@ -1,0 +1,28 @@
+<html>
+	<head>
+		<title> Highmaps </title>
+	</head>
+	<body>
+	
+		<div id="container" style="width:100%; height:400px;"></div>
+	
+		
+		<script type="text/javascript" src="js/jquery.min.js" ></script>
+		<script type="text/javascript" src="js/highmaps.js" ></script>
+		
+		<script>
+			
+			$(document).ready(function() {
+				$.ajax({url: "geo/mesorregiao.json", success: function(result){
+					$('#container').slideDown().highcharts('Map', {
+						series: [{
+							mapData: result
+						}]
+					});
+				}});
+			});
+		
+		</script>
+		
+	</body>
+</html>
